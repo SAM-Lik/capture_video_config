@@ -1,0 +1,4 @@
+ffmpeg -f alsa -i hw:3,0\
+  -f v4l2 -i /dev/video0 -vf yadif \
+ -map 1:v -map 0:a -codec:v libx264 -codec:a pcm_s32le \
+ -f matroska test.mkv

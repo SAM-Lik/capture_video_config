@@ -1,0 +1,5 @@
+ffmpeg -f alsa -i hw:3,0\
+ -f v4l2 -i /dev/video0 -standard palm -vf yadif \
+  -vcodec ffv1 -qscale 0 \
+ -fps_mode auto -async -1 \
+ -f matroska output_ffv1.mkv
