@@ -1,0 +1,1 @@
+mencoder tv:// -tv driver=v4l2:norm=PAL:width=720:height=576:device=/dev/video0:input=0:fps=25:alsa:amode=1:forcechan=2:audiorate=48000:adevice=hw.3,0:forceaudio:immediatemode=0 -ovc lavc -lavcopts vcodec=ffvhuff:vstrict=-1:pred=2:context=1 -oac pcm -vf pullup,softskip,yadif=0 -of lavf -lavfopts format=mkv -o "movie_out.mkv"
